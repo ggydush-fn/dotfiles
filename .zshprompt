@@ -1,0 +1,38 @@
+# AVIT ZSH Prompt
+
+# settings
+typeset +H _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
+typeset +H _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+
+
+PROMPT='$FG[204]$(_user_host) $FG[222]in %{$fg[white]%}%~
+%{%(!.%F{white}.%F{white})%}▶%{$reset_color%} '
+
+PROMPT2='%{%(!.%F{red}.%F{white})%}◀%{$reset_color%} '
+
+function _user_host() {
+  local me
+  if [[ -n $SSH_CONNECTION ]]; then
+    me="%n@%m"
+  elif [[ "$HOST" == *"MacBook"* ]]; then
+    me="macbook"
+  elif [[ "$HOST" == "MBP"* ]]; then
+    me="macbook"
+  elif [[ $LOGNAME == $USER ]]; then
+    me="%n@%m"
+  else
+    me="ggydush@%m"
+  fi
+  if [[ -n $me ]]; then
+    echo "$me%{$reset_color%}"
+  fi
+}
+
+
+# LS colors, made with https://geoff.greer.fm/lscolors/
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+export GREP_COLOR='1;33'
+
+# Add some spacing
+precmd() { print '' }
