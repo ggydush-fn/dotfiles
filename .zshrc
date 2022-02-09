@@ -1,4 +1,8 @@
-FORTUNE=$(fortune -n 62 -s computers science wisdom fortunes  | tr '\r\n\t' ' ')
+if which fortune >/dev/null; then
+    FORTUNE=$(fortune -n 62 -s computers science wisdom fortunes  | tr '\r\n\t' ' ')
+else
+    FORTUNE="Code code code..."
+fi
 echo "
 \|/          (__)
       \------(oo)  ${FORTUNE}

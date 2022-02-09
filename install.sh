@@ -1,6 +1,6 @@
 # /bin/zsh
 # Install ohmyzsh
-sudo apt-get update && apt-get install -y curl fortune
+# sudo apt-get update && apt-get install -y curl fortune
 curl -fsSL https://raw.githubusercontent.com/deluan/zsh-in-docker/master/zsh-in-docker.sh | sh
 cp ~/dotfiles/.zsh* ~
 
