@@ -12,6 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
+export PURE_PROMPT_SYMBOL=">"
 
 # Other installs:
 # brew: bat, fzf, j, figlet, tldr, jump
