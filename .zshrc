@@ -25,8 +25,10 @@ source $ZSH/oh-my-zsh.sh
 # All the Python fixings
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init - --no-rehash)"
-export PATH=$(pyenv root)/shims:$PATH
+if which pyenv >/dev/null; then
+    eval "$(pyenv init - --no-rehash)"
+    export PATH=$(pyenv root)/shims:$PATH
+fi
 
 # Other tools
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
