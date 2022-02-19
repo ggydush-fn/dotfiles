@@ -10,4 +10,4 @@ cd ~/.zsh.d/ && sh install.sh
 
 Since the directory is tracked with `git`, updating should be possible with just a `git pull`.
 
-Other CLI tools like `bat`, `tldr`, `fortune` etc. can be installed separately with brew/apt.
+Other CLI tools like `kubectx`, `bat`, `tldr`, etc. can be installed separately with brew/apt.
