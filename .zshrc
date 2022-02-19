@@ -19,6 +19,7 @@ plugins=(
     zsh-syntax-highlighting
     z
 )
+
 source $ZSH/oh-my-zsh.sh
 
 if which fortune >/dev/null; then
@@ -32,3 +33,11 @@ echo "
        ||    (__)
        ||w--||     \|/
    \|/"
+
+### TOOL STARTUP/CONFIGURATION
+for DIR in /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk $HOME/google-cloud-sdk
+do
+    [ -d $DIR ] && source $DIR/path.zsh.inc && source $DIR/completion.zsh.inc
+done
+
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh

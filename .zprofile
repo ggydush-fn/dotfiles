@@ -5,25 +5,17 @@ test -n "$(find ~/.zsh.d/ -maxdepth 1 -name '*.zsh')" && source <(cat $HOME/.zsh
 export POETRY_VIRTUALENVS_PATH="$HOME/.virtualenvs"
 export POETRY_VIRTUALENVS_IN_PROJECT=false
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
-### ALIASES
-alias prune="docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f"
-alias update="source ~/.zsh.d/.zshrc"
-alias cdd='cd ~/dyson-sync/dev/'
-
-### TOOL STARTUP/CONFIGURATION
-if [ -d '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk' ]; then
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-fi
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 if which pyenv >/dev/null; then
     eval "$(pyenv init - --no-rehash)"
     export PATH=$(pyenv root)/shims:$PATH
 fi
+
+### ALIASES
+alias prune="docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f"
+alias update="source ~/.zsh.d/.zshrc"
+alias cdd='cd ~/dyson-sync/dev/'
 
 kubectl () {
     # Lazy load kubectl completions
