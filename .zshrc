@@ -5,6 +5,7 @@ fpath+=$HOME/.zsh.d/pure
 autoload -U promptinit; promptinit
 prompt pure
 export PURE_PROMPT_SYMBOL=">"
+# Make ls/tab completion colors prettier (blue instead of red)
 export LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43"
 export LSCOLORS="ExGxBxDxCxEgEdx"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
