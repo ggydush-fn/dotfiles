@@ -9,8 +9,6 @@ export LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:
 export LSCOLORS="ExGxBxDxCxEgEdx"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# Other installs:
-# brew: bat, fzf, figlet, tldr
 plugins=(
     colored-man-pages
     extract
@@ -22,26 +20,14 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
-# All the Python fixings
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.pyenv/bin:$PATH"
-if which pyenv >/dev/null; then
-    eval "$(pyenv init - --no-rehash)"
-    export PATH=$(pyenv root)/shims:$PATH
-fi
-
-# Other tools
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 if which fortune >/dev/null; then
     FORTUNE=$(fortune -n 62 -s computers science wisdom fortunes  | tr '\r\n\t' ' ')
 else
-    FORTUNE="Code code code..."
+    FORTUNE="Comma ti yi yi yeah. Comma ti yippity yi yeah."
 fi
 echo "
 \|/          (__)
       \------(oo)  ${FORTUNE}
        ||    (__)
        ||w--||     \|/
-   \|/
-"
+   \|/"
