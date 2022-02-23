@@ -2,3 +2,4 @@ pure
 .zcompdump*
 .zsh_history*
 freenome.zsh
+.zsh_sessions
